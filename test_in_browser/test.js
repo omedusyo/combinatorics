@@ -1,4 +1,11 @@
 
+import * as combinatorics from "../src/combinatorics";
+const {
+  range, tail,
+} = combinatorics;
+
+window.combinatorics = combinatorics;
+
 function assert(bool, str="") {
   if (bool) {
     console.log(`${str}: OK`);
@@ -45,5 +52,4 @@ assert(eqarray(range(2, 2), []));
 
 test("tail(xs)");
 assert(eqarray(tail([1,2,3]), [2,3]));
-
 

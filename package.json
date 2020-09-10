@@ -1,0 +1,14 @@
+{
+  "name": "combinatorics",
+  "version": "1.0.0",
+  "description": "Library for working with elementary combinatorial structures (subsets, multisubsets, permutations, etc.)",
+  "scripts": {
+    "dev": "parcel test_in_browser/index.html"
+  },
+  "author": "Yuriy Dupyn",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {}
+}
