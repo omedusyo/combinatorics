@@ -1,8 +1,10 @@
 
+import { range, head, tail } from "../src/helpers";
+
 import * as combinatorics from "../src/combinatorics";
 const {
-  range, tail,
 } = combinatorics;
+
 
 window.combinatorics = combinatorics;
 
