@@ -5,17 +5,13 @@ Library for enumerating elementary combinatorial structures (subsets, multisubse
 # Installation
 Install dependencies ([parcel](https://parceljs.org/))
 ```
+git clone https://github.com/omedusyo/combinatorics.git
+cd combinatorics
 npm install
 npm run dev
 ```
-This will start up a server on localhost. In the browser open up a console. You can access the combinatorics.js functions through
-```
-combinatorics
-```
-objects that's exposed. Try e.g.
-```
-combinatorics.range(0, 10)
-```
+This will start up a server on localhost. In the browser open up a console. There you can access the combinatorics.js functions through
+`combinatorics` object that's exposed. Try e.g. `combinatorics.combinations([1,2,3,4,5], 3)`, (or even better `Array.from(combinatorics.combinations([1,2,3,4,5], 3))`.
 
 # Docs
 Computes all subsets of length n of a set (subset means unordered without repetition of elements)
