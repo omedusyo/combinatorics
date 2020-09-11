@@ -1,6 +1,3 @@
-//
-// TODO: this is here because I use generators/iterators/yield
-import 'regenerator-runtime/runtime'; 
 
 import { range, head, tail } from "./helpers";
 
@@ -27,8 +24,8 @@ function* prependNTimes(a, xss, n) {
   }
 }
 
+// ======== COMBINATIONS ========
 
-// TODO: figure out why there is numOfCombinations and C
 // Computes m choose n
 // numOfCombinations(m: Nat, n: Nat): Nat
 export function numOfCombinations(setLength, n) {
@@ -47,24 +44,6 @@ export function numOfCombinations(setLength, n) {
   }
 }
 
-// TODO: delete
-// Computes m choose n
-// : Nat * Nat -> Nat
-export function C(setLength, n) {
-  if (n === 0) {
-    return 1;
-  } else if (setLength === 0) {
-    // Note n > 0.
-    return 0;
-  } else {
-    // Note setLength, n > 0.
-    let sum = 0;
-    for (let i = n - 1; i < setLength; i++) {
-      sum += C(i, n - 1);
-    }
-    return sum;
-  }
-}
 
 // example.
 //  > rightSubarrays(['a', 'b', 'c'])
@@ -117,6 +96,8 @@ export function* combinations(set, n) {
 }
 
 
+// ======== TUPLES ========
+
 // tuples(set: Array(a), n : Nat): Iterator(Array(a))
 export function* tuples(set, n) {
   if (n === 0) {
@@ -133,6 +114,8 @@ export function numOfTuples(m, n) {
   return m**n;
 }
 
+
+// ======== PERMUTATIONS ========
 
 // numOfPermutations(m: Nat, n : Nat): Nat
 export function numOfPermutations(m, n) {
@@ -189,6 +172,7 @@ export function* permutations(set, n) {
   }
 }
 
+// ======== MULTISUBSETS ========
 
 // numOfMultisets(m: Nat, n : Nat): Nat
 export function numOfMultisets(m, n) {

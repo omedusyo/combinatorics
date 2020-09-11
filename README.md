@@ -2,7 +2,10 @@
 # Description
 Library for enumerating elementary combinatorial structures (subsets, multisubsets, permutations, tuples).
 
-# Installation
+# Install
+TODO
+
+# Trying the library out in a browser console
 Install dependencies ([parcel](https://parceljs.org/))
 ```
 git clone https://github.com/omedusyo/combinatorics.git

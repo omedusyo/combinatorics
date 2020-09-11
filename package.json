@@ -2,6 +2,7 @@
   "name": "combinatorics",
   "version": "1.0.0",
   "description": "Library for enumerating elementary combinatorial structures (subsets, multisubsets, permutations, tuples).",
+  "main": "src/combinatorics.js",
   "scripts": {
     "dev": "parcel test_in_browser/index.html"
   },

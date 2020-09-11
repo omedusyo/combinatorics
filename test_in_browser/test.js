@@ -1,6 +1,10 @@
 
 import { range, head, tail } from "../src/helpers";
 
+// TODO: this is here because I use generators/iterators/yield
+// import 'regenerator-runtime/runtime'; 
+import 'regenerator-runtime/runtime'; 
+
 import * as combinatorics from "../src/combinatorics";
 const {
   numOfCombinations,
