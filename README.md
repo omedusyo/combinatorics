@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 This will start up a server on localhost. In the browser open up a console. There you can access the combinatorics.js functions through
-`combinatorics` object that's exposed. Try e.g. `combinatorics.combinations([1,2,3,4,5], 3)`, (or even better `Array.from(combinatorics.combinations([1,2,3,4,5], 3))`.
+`combinatorics` object that's exposed. Try e.g. `combinatorics.combinations([1,2,3,4,5], 3)`, (or even better `Array.from(combinatorics.combinations([1,2,3,4,5], 3))` - this converts an iterator to an array).
 
 # Docs
 Computes all subsets of length n of a set (subset means unordered without repetition of elements)
