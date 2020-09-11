@@ -3,6 +3,8 @@ import { range, head, tail } from "../src/helpers";
 
 import * as combinatorics from "../src/combinatorics";
 const {
+  numOfCombinations,
+  combinations,
 } = combinatorics;
 
 
@@ -54,4 +56,48 @@ assert(eqarray(range(2, 2), []));
 
 test("tail(xs)");
 assert(eqarray(tail([1,2,3]), [2,3]));
+
+test("numOfCombinations(setLength, n)");
+assert(numOfCombinations(10, 5) == 252);
+assert(numOfCombinations(5, 0) == 1);
+assert(numOfCombinations(5, 1) == 5);
+assert(numOfCombinations(5, 2) == 10);
+assert(numOfCombinations(5, 3) == 10);
+assert(numOfCombinations(5, 4) == 5);
+assert(numOfCombinations(5, 5) == 1);
+assert(numOfCombinations(0, 0) == 1);
+assert(numOfCombinations(0, 5) == 0);
+assert(numOfCombinations(1, 0) == 1);
+assert(numOfCombinations(1, 1) == 1);
+assert(numOfCombinations(1, 2) == 0);
+
+test("combinations(set: Array(a), n: Nat)");
+// combinations(set: Array(a), n: Nat): Iterator(Array(a))
+console.log(Array.from(combinations([1,2,3], 2)));
+assert(
+  eqarray(
+    Array.from(combinations([1,2,3], 0)),
+    [[]], eqarray
+  )
+);
+assert(
+  eqarray(
+    Array.from(combinations([1,2,3], 1)),
+    [[1], [2], [3]], eqarray
+  )
+);
+assert(
+  eqarray(
+    Array.from(combinations([1,2,3], 2)),
+    [[1,2], [1,3], [2,3]], eqarray
+  )
+);
+assert(
+  eqarray(
+    Array.from(combinations([1,2,3], 3)),
+    [[1,2,3]], eqarray
+  )
+);
+
+// TODO
 

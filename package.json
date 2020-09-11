@@ -1,7 +1,7 @@
 {
   "name": "combinatorics",
   "version": "1.0.0",
-  "description": "Library for working with elementary combinatorial structures (subsets, multisubsets, permutations, etc.)",
+  "description": "Library for enumerating elementary combinatorial structures (subsets, multisubsets, permutations, tuples).",
   "scripts": {
     "dev": "parcel test_in_browser/index.html"
   },

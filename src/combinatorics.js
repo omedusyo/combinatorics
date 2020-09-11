@@ -1,5 +1,6 @@
-
-import 'regenerator-runtime/runtime'; // this is here because I use generators/iterators/yield
+//
+// TODO: this is here because I use generators/iterators/yield
+import 'regenerator-runtime/runtime'; 
 
 import { range, head, tail } from "./helpers";
 
@@ -27,9 +28,29 @@ function* prependNTimes(a, xss, n) {
 }
 
 
+// TODO: figure out why there is numOfCombinations and C
 // Computes m choose n
 // numOfCombinations(m: Nat, n: Nat): Nat
 export function numOfCombinations(setLength, n) {
+  if (n === 0) {
+    return 1;
+  } else if (setLength === 0) {
+    // Note n > 0.
+    return 0;
+  } else {
+    // Note setLength, n > 0.
+    let sum = 0;
+    for (let i = n - 1; i < setLength; i++) {
+      sum += numOfCombinations(i, n - 1);
+    }
+    return sum;
+  }
+}
+
+// TODO: delete
+// Computes m choose n
+// : Nat * Nat -> Nat
+export function C(setLength, n) {
   if (n === 0) {
     return 1;
   } else if (setLength === 0) {
@@ -95,25 +116,8 @@ export function* combinations(set, n) {
   // Here n > set.length, so we yield nothing.
 }
 
-// Computes m choose n
-// : Nat * Nat -> Nat
-export function C(setLength, n) {
-  if (n === 0) {
-    return 1;
-  } else if (setLength === 0) {
-    // Note n > 0.
-    return 0;
-  } else {
-    // Note setLength, n > 0.
-    let sum = 0;
-    for (let i = n - 1; i < setLength; i++) {
-      sum += C(i, n - 1);
-    }
-    return sum;
-  }
-}
 
-
+// tuples(set: Array(a), n : Nat): Iterator(Array(a))
 export function* tuples(set, n) {
   if (n === 0) {
     yield [];
@@ -124,11 +128,13 @@ export function* tuples(set, n) {
   }
 }
 
+// numOfTuples(m: Nat, n : Nat): Nat
 export function numOfTuples(m, n) {
   return m**n;
 }
 
 
+// numOfPermutations(m: Nat, n : Nat): Nat
 export function numOfPermutations(m, n) {
   if (n <= m) {
     let product = 1;
@@ -172,6 +178,7 @@ function* foci(xs) {
   }
 }
 
+// permutations(set: Array(a), n: Nat): Iterator(Array(a))
 export function* permutations(set, n) {
   if (n === 0) {
     yield [];
@@ -183,6 +190,7 @@ export function* permutations(set, n) {
 }
 
 
+// numOfMultisets(m: Nat, n : Nat): Nat
 export function numOfMultisets(m, n) {
   function mutate(xs) {
     for (var i = 1; i < xs.length; i++) {
@@ -203,6 +211,7 @@ export function numOfMultisets(m, n) {
   }
 }
 
+// multisets(set: Array(a), n: Nat): Iterator(Array(a))
 export function* multisets(set, n) {
   if (n === 0) {
     yield [];
