@@ -9,7 +9,7 @@ npm install https://github.com/omedusyo/combinatorics.git
 then
 ```
 import {
-  combinatorics, numOfCombinations,
+  combinations, numOfCombinations,
   tuples, numOfTuples,
   permutations, numOfPermutations,
   multisets, numOfMultisets,
